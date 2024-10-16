@@ -1,0 +1,19 @@
+120  p% = 1
+130  ProbeOpenByIndex p%
+140  WireSWDConnect p%
+150  APList p%
+160  REM -----------------------------------
+170  REM Debug Mailbox AP Index is 2
+180  REM -----------------------------------
+190  SelectProbeCore p% 2
+200  REM -----------------------------------
+210  REM DEBUG_SESSION_REQ: 7
+220  REM -----------------------------------
+230  r% = 7
+240  REM -----------------------------------
+250  PRINT "Issuing Debug Session Request... ";r%
+260  PRINT "";
+270  DebugMailboxReq this r%
+280  CoreList p%
+290  REM ProbeCloseByIndex p%
+300  SelectProbeCore p% 0
